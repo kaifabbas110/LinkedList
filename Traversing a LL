@@ -1,16 +1,20 @@
 class Node:
+    //Node of a list
     def __init__(self,value):
         self.data = value
         self.next = None
         
 class LinkedList:
+    //Head of LL
     def __init__(self):
         self.head = None
-        self.n = 0    
-    
+        self.n = 0
+
+    //Length of LL
     def __len__(self):
       return self.n
-      
+
+    //Insert a node from head
     def insertFromHead(self,value):
         new_node = Node(value)
         new_node.next = self.head
