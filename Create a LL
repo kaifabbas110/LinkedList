@@ -14,8 +14,8 @@ class LinkedList:
     def __len__(self):
       return self.n
 
-    //Insert a node on head
-    def insertHead(self,value):
+    //Insert a node from head
+    def insertFromHead(self,value):
         new_node = Node(value)
         new_node.next = self.head
         self.head = new_node
