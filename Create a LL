@@ -1,26 +1,50 @@
+# Node of a LL
 class Node:
-    //Node of a list
     def __init__(self,value):
         self.data = value
         self.next = None
         
 class LinkedList:
-    //Head of LL
+    
+    # initialize head of a node
     def __init__(self):
         self.head = None
-        self.n = 0
-
-    //Length of LL
+        self.n = 0 
+        return self.head
+        
+    # Length of LL
     def __len__(self):
       return self.n
-
-    //Insert a node from head
+      
+    # Insert from head      
     def insertFromHead(self,value):
         new_node = Node(value)
         new_node.next = self.head
         self.head = new_node
         self.n += 1
+
+    # Insert from tail
+    def append(self,value):
+        new_node = Node(value)
+        curr = self.head
+        
+        while curr.next != None:
+            curr = curr.next
+        
+        curr.next = new_node
+        
+    #  Traverse the LL
+    def traverse(self):
+        curr = self.head
+        while curr != None:
+            print(curr.data)
+            curr = curr.next
+            
 L = LinkedList()
-L.insertHead(1)
-L.insertHead(2)
-L.insertHead(3)
+L.insertFromHead(1)
+L.insertFromHead(2)
+L.insertFromHead(3)
+L.insertFromHead(4)
+L.append(5)
+L.append(500)
+L.traverse()
